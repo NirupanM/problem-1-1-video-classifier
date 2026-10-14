@@ -1,19 +1,9 @@
-# Fill this in before you submit -- our evaluator runs these commands
-# EXACTLY as written, in this order, from a fresh checkout of your fork.
-# Keep every command non-interactive (no prompts) and idempotent.
-
 setup_commands:
   - "pip install -r requirements.txt"
-  # - add every other setup step here, in order (env vars, downloads, etc.)
 
 run_commands:
-  - "python src/main.py --help"
-  # - the real command(s) that actually run your solution
+  - "python src/main.py demo --out sample_videos"
 
 test_commands: []
-  # optional -- commands that run your own tests/checks, if you have any
 
-notes: ""
-  # anything we should know before running this (e.g. "needs a GPU",
-  # "takes about 10 minutes", "expects a sample dataset already present
-  # under data/, see docs/ for where to get it")
+notes: "CPU only, ~1 minute. No corpus was provided, so the demo generates synthetic clips, trains, reports held-out accuracy and writes src/model.json. For real data: python src/main.py train DATA_DIR (DATA_DIR/<class>/*.mp4), then python src/main.py classify VIDEO. See docs/design.md."
